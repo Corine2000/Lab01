@@ -33,13 +33,18 @@ public class FXMLController {
     private Button btnReset;
 
     @FXML
-    void doInsert(ActionEvent event) {
-    	// TODO
+    void doInsert(ActionEvent event) { //dopo aver premuto il buttone inserisce cosa faccio ?
+    	elenco.addParola(txtParola.getText());
+    	
+    	System.out.println(elenco.getElenco());
+    	
+    		
+    	//txtResult.appendText(elenco.getElenco()); // come faccio a stampare una lista nell'aria dei risultati?
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	elenco.reset();
     }
 
     @FXML
