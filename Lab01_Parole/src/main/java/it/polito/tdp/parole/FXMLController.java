@@ -36,10 +36,15 @@ public class FXMLController {
     void doInsert(ActionEvent event) { //dopo aver premuto il buttone inserisce cosa faccio ?
     	elenco.addParola(txtParola.getText());
     	
-    	System.out.println(elenco.getElenco());
-    	
+    //	System.out.println(elenco.getElenco());
     		
-    	//txtResult.appendText(elenco.getElenco()); // come faccio a stampare una lista nell'aria dei risultati?
+    //	txtResult.appendText(elenco.getElenco()); // come faccio a stampare una lista nell'aria dei risultati?
+    	
+    	String lista = elenco.toString();
+    	txtResult.setText(lista);
+    	/*for(String p: elenco.getElenco()) {
+    		txtResult.appendText(p+"\n");
+    	}*/
     }
 
     @FXML
