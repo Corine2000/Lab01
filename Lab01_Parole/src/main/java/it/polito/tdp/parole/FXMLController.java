@@ -3,6 +3,7 @@ package it.polito.tdp.parole;
 import it.polito.tdp.parole.model.Parole;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,22 +35,29 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) { //dopo aver premuto il buttone inserisce cosa faccio ?
-    	elenco.addParola(txtParola.getText());
+    	
+    	elenco.addParola(txtParola.getText()); //aggiungo la parola inserita dall'utente
     	
     //	System.out.println(elenco.getElenco());
     		
     //	txtResult.appendText(elenco.getElenco()); // come faccio a stampare una lista nell'aria dei risultati?
     	
-    	String lista = elenco.toString();
-    	txtResult.setText(lista);
-    	/*for(String p: elenco.getElenco()) {
-    		txtResult.appendText(p+"\n");
-    	}*/
+    	
+    //	String lista = elenco.toString();
+    //	txtResult.setText(lista);
+    	
+    	String list = "";
+    	for(String p: elenco.getElenco()) {
+    		list+= p+"\n";
+    	}
+    	txtResult.setText(list);
+    	
     }
 
     @FXML
     void doReset(ActionEvent event) {
     	elenco.reset();
+    	txtResult.setText(elenco.toString());
     }
 
     @FXML

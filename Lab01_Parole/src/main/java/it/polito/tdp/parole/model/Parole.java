@@ -23,7 +23,6 @@ public class Parole {
 	}
 	
 	public void reset() {
-		// TODO
 		listaparole.clear();
 	}
    
@@ -32,11 +31,13 @@ public class Parole {
 		@Override
 		public int compare(String s1, String s2) {
 			return s1.compareTo(s2);
-		}
-
+		  }
+	}
+	
 		@Override
 		public String toString() {
 			String ss="";
+			Collections.sort(listaparole, new OrdinamentoAlfabetico());
 			
 			for(String s: listaparole)
 			  {
@@ -46,7 +47,5 @@ public class Parole {
 		}
 
 		
-		
-		
-	}
+	
 }
